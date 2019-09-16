@@ -63,7 +63,10 @@
 
             foreach (Action action in Actions.SubscribableElements)
             {
-                action.ActivationStateChanged.RemoveListener(OnActionActivationStateChanged);
+                if (action)
+                {
+                    action.ActivationStateChanged.RemoveListener(OnActionActivationStateChanged);
+                }
             }
         }
 
